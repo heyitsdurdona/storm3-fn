@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (min-width: theme('screens.sm')) {
+    padding-inline: 2rem;
+  }
+  @media (min-width: theme('screens.md')) {
+    padding-inline: 4rem;
+  }
+  @media (min-width: theme('screens.lg')) {
+    padding-inline: 6rem;
+  }
+  @media (min-width: theme('screens.xl')) {
+    padding-inline: 8rem;
+  }
+  @media (min-width: theme('screens.2xl')) {
+    padding-inline: 10rem;
+  }
+}
+
+@theme{
+    --color-custom-dark: #2F2F2F;
+}
