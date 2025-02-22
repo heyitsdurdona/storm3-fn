@@ -715,6 +715,9 @@
     margin-inline: auto !important;
     padding-inline: 15px !important;
   }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
   }
@@ -1843,6 +1846,18 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .px-\[1\] {
+    padding-inline: 1;
+  }
+  .px-\[16\] {
+    padding-inline: 16;
+  }
+  .px-\[16p\] {
+    padding-inline: 16p;
+  }
+  .px-\[16px\] {
+    padding-inline: 16px;
+  }
   .px-\[18px\] {
     padding-inline: 18px;
   }
@@ -1857,6 +1872,15 @@
   }
   .py-\[1\] {
     padding-block: 1;
+  }
+  .py-\[12\] {
+    padding-block: 12;
+  }
+  .py-\[12p\] {
+    padding-block: 12p;
+  }
+  .py-\[12px\] {
+    padding-block: 12px;
   }
   .py-\[14\] {
     padding-block: 14;
@@ -2617,14 +2641,64 @@
       display: block;
     }
   }
+  .tablet\:justify-between {
+    @media (width >= 40rem) {
+      justify-content: space-between;
+    }
+  }
+  .tablet\:justify-start {
+    @media (width >= 40rem) {
+      justify-content: flex-start;
+    }
+  }
+  .tablet\:px-\[18px\] {
+    @media (width >= 40rem) {
+      padding-inline: 18px;
+    }
+  }
+  .tablet\:py-\[15px\] {
+    @media (width >= 40rem) {
+      padding-block: 15px;
+    }
+  }
   .laptop\:block {
     @media (width >= 64rem) {
       display: block;
     }
   }
+  .laptop\:flex {
+    @media (width >= 64rem) {
+      display: flex;
+    }
+  }
   .laptop\:hidden {
     @media (width >= 64rem) {
       display: none;
+    }
+  }
+  .laptop\:items-center {
+    @media (width >= 64rem) {
+      align-items: center;
+    }
+  }
+  .laptop\:justify-between {
+    @media (width >= 64rem) {
+      justify-content: space-between;
+    }
+  }
+  .laptop\:gap-4 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 4);
+    }
+  }
+  .laptop\:px-\[18px\] {
+    @media (width >= 64rem) {
+      padding-inline: 18px;
+    }
+  }
+  .laptop\:py-\[15px\] {
+    @media (width >= 64rem) {
+      padding-block: 15px;
     }
   }
 }
