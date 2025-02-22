@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Storm</title>
     <link rel="stylesheet" href="./css/output.css">
 </head>
 <body>
     <!-- HEADER START -->
-    <header class="py-[22px] ">
+    <header class="py-[22px] shadow-sm">
         <div class="container flex items-center justify-between">
             <!-- left header start -->
              <div class="flex items-center gap-14">
@@ -16,7 +16,7 @@
                     <img src="./images/site-logo.svg" alt="site-logo" width="136">
                 </a>
     
-                <nav>
+                <nav class="hidden tablet:block">
                     <button class="flex gap-[13px] " aria-label="Menu">
                       <img src="./images/burger-icon.svg" alt=""> 
                       <span class="font-bold text-[18px] text-custom-dark">Kurslar</span>
@@ -26,14 +26,17 @@
             <!-- left header end -->
             
             <!-- search start -->
-             <search class="relative">
+             <search class="hidden laptop:block relative">
                 <input class="py-[14px] pl-[18px] w-[475px] bg-[#F8F8FA] rounded-xs focus:outline-0" type="search" placeholder="Kurslar bo'yicha izlash">
                 <img class="absolute right-4 top-2/5" src="./images/search.svg" alt="">
              </search>
             <!-- search end -->
 
             <!-- right header start -->
-            <div class="flex gap-[48px]">
+            <div class="flex gap-[48px] items-center">
+                <search class="laptop:hidden">
+                    <img src="./images/search.svg" alt="" width="22">
+                 </search>
                 <a class="font-medium text-custom-dark" href="#" role="button">A'zo bo'lish</a>
                 <a class="font-medium text-custom-dark" href="#" role="button" class="relative pl-6 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-4 before:h-4 before:bg-[url('../images/user.svg')] before:bg-no-repeat before:bg-contain">
                   Kirish

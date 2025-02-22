@@ -252,11 +252,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --breakpoint-sm: 40rem;
-    --breakpoint-md: 48rem;
-    --breakpoint-lg: 64rem;
-    --breakpoint-xl: 80rem;
-    --breakpoint-2xl: 96rem;
     --container-3xs: 16rem;
     --container-2xs: 18rem;
     --container-xs: 20rem;
@@ -374,6 +369,10 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
+    --breakpoint-tablet: 40rem;
+    --breakpoint-middle: 48rem;
+    --breakpoint-laptop: 64rem;
+    --breakpoint-desktop: 80rem;
     --color-custom-dark: #2F2F2F;
   }
 }
@@ -582,6 +581,9 @@
   .end-2 {
     inset-inline-end: calc(var(--spacing) * 2);
   }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
   .top-2\/5 {
     top: calc(2/5 * 100%);
   }
@@ -677,9 +679,6 @@
     @media (width >= 80rem) {
       max-width: 80rem;
     }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
   }
   .container\! {
     width: 100% !important;
@@ -695,47 +694,16 @@
     @media (width >= 80rem) {
       max-width: 80rem !important;
     }
-    @media (width >= 96rem) {
-      max-width: 96rem !important;
-    }
   }
   .container {
+    max-width: 1140px;
     margin-inline: auto;
-    padding-inline: 1rem;
-    @media (min-width: 40rem) {
-      padding-inline: 2rem;
-    }
-    @media (min-width: 48rem) {
-      padding-inline: 4rem;
-    }
-    @media (min-width: 64rem) {
-      padding-inline: 6rem;
-    }
-    @media (min-width: 80rem) {
-      padding-inline: 8rem;
-    }
-    @media (min-width: 96rem) {
-      padding-inline: 10rem;
-    }
+    padding-inline: 15px;
   }
   .container\! {
+    max-width: 1140px !important;
     margin-inline: auto !important;
-    padding-inline: 1rem !important;
-    @media (min-width: 40rem) {
-      padding-inline: 2rem !important;
-    }
-    @media (min-width: 48rem) {
-      padding-inline: 4rem !important;
-    }
-    @media (min-width: 64rem) {
-      padding-inline: 6rem !important;
-    }
-    @media (min-width: 80rem) {
-      padding-inline: 8rem !important;
-    }
-    @media (min-width: 96rem) {
-      padding-inline: 10rem !important;
-    }
+    padding-inline: 15px !important;
   }
   .box-border {
     box-sizing: border-box;
@@ -835,6 +803,9 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -1250,11 +1221,23 @@
   .gap-14 {
     gap: calc(var(--spacing) * 14);
   }
+  .gap-\[8\] {
+    gap: 8;
+  }
   .gap-\[13px\] {
     gap: 13px;
   }
   .gap-\[48px\] {
     gap: 48px;
+  }
+  .gap-\[80\] {
+    gap: 80;
+  }
+  .gap-\[80p\] {
+    gap: 80p;
+  }
+  .gap-\[80px\] {
+    gap: 80px;
   }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
@@ -1711,9 +1694,6 @@
   .align-top {
     vertical-align: top;
   }
-  .text-\[16px\] {
-    font-size: 16px;
-  }
   .text-\[18px\] {
     font-size: 18px;
   }
@@ -1801,18 +1781,6 @@
   }
   .\[color\:red\]\/50\! {
     color: color-mix(in oklab, red 50%, transparent) !important;
-  }
-  .text-\[\#2F2F2F\] {
-    color: #2F2F2F;
-  }
-  .text-\[1\] {
-    color: 1;
-  }
-  .text-\[16\] {
-    color: 16;
-  }
-  .text-\[16p\] {
-    color: 16p;
   }
   .text-custom-dark {
     color: var(--color-custom-dark);
@@ -1977,6 +1945,10 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
@@ -2319,6 +2291,21 @@
     &:focus {
       outline-style: var(--tw-outline-style);
       outline-width: 0px;
+    }
+  }
+  .tablet\:block {
+    @media (width >= 40rem) {
+      display: block;
+    }
+  }
+  .laptop\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
+  }
+  .laptop\:hidden {
+    @media (width >= 64rem) {
+      display: none;
     }
   }
 }
